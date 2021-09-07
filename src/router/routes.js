@@ -8,6 +8,7 @@ const routes = [
       { path: 'accounts', component: () => import('pages/accounts/Index.vue') },
       { path: 'accounts/:id', component: () => import('pages/accounts/_id/Index.vue') },
       { path: 'accounts/:id/edit', component: () => import('pages/accounts/_id/Edit.vue') },
+      { path: 'addresses', component: () => import('pages/addresses/Index.vue') },
     ]
   },
   // Always leave this as last one,
