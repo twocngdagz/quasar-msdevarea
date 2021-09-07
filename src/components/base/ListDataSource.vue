@@ -23,6 +23,7 @@ export default {
   methods: {
     fetch() {
       this.loading = true
+      console.log(this.config)
       api.get(this.endpoint, this.config)
         .then(response => {
           this.items = response.data.data
@@ -42,7 +43,8 @@ export default {
     return this.$slots.default({
       items: this.items,
       meta: this.meta,
-      loading: this.loading
+      loading: this.loading,
+      fetch: this.fetch
     })
   }
 }
