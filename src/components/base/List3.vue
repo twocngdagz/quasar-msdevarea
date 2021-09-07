@@ -95,11 +95,11 @@ export default {
     },
     editItem(id) {
       this.id = id
-      this.$emit('editItem')
+      this.$emit('editItem', id)
     },
     showItem(id) {
       this.id = id
-      this.$emit('showItem')
+      this.$emit('showItem', id)
     },
     addItem() {
       this.$emit('addItem')
