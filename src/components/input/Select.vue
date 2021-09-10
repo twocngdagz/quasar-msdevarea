@@ -6,7 +6,15 @@
     :placeholder="placeholder"
     :id="'input-'+field"
     :name="'input-'+field"
-  ></q-select>
+    :option-label="optionLabel"
+    :option-value="optionValue"
+  >
+    <template v-slot:selected>
+      <div v-if="localValue.length > 0">
+        {{localValue[0].label}}
+      </div>
+    </template>
+  </q-select>
 </template>
 
 <script>
@@ -39,6 +47,10 @@ export default {
       type: String,
       default: "name"
     },
+    optionValue: {
+      type: String,
+      default: "value"
+    }
   },
   emits: ['update:modelValue'],
   computed: {

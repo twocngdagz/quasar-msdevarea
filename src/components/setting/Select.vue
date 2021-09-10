@@ -4,6 +4,7 @@
       :field="field"
       :label="label"
       :options="optionsArray"
+      option-label="label"
       :modelValue="modelValue[module][token]"
       @update:modelValue="onInput"
     ></InputSelect>
@@ -45,7 +46,7 @@ export default {
     optionsArray() {
       let options = [];
       for(let [key,value] of Object.entries(this.payload.options)) {
-        options.push({label:key, value:value})
+        options.push({key:key, value:key, label: value})
       }
       return options
     },

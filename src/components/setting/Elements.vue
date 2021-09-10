@@ -52,7 +52,6 @@ export default {
   },
   methods: {
     onInput(value) {
-      console.log(value)
       this.$emit('update:modelValue', value)
     }
   },

@@ -3,7 +3,7 @@
     <InputNumber
       :field="field"
       :label="label"
-      :modelValue="localValue[module][token]"
+      :modelValue="parseInt(localValue[module][token])"
       @update:modelValue="onInput"
     ></InputNumber>
   </div>
@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     onInput(value) {
+      console.log('setting number ' + value)
       this.$store.commit('settingform/UPDATE_ITEM_VALUE', {
         module: this.module,
         token: this.token,

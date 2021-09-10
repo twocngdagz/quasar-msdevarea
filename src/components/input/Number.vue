@@ -1,11 +1,11 @@
 <template>
   <div>
     <q-input
-      v-model="value"
-      @update:model-value="$emit('input', $event);"
+      :modelValue="modelValue"
+      @update:model-value="$emit('update:modelValue', $event);"
       :id="'input-'+field"
       :name="'input-'+field"
-      type="number"
+      type="type"
       :placeholder="placeholder"
       :label="label"
     ></q-input>
@@ -15,14 +15,14 @@
 <script>
 
 export default {
-  name: "InputText",
+  name: "InputNumber",
   props: {
     field: {required: true, type: String},
     label: {type: String},
     rules: {required: false},
     placeholder: {required: false, type: String},
-    type: {default: 'text', type: String},
-    value: {type: Number}
+    type: {default: 'number', type: String},
+    modelValue: {type: Number}
   }
 }
 </script>
