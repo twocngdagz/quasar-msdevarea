@@ -11,6 +11,7 @@
           :options="field.options"
           :field="field.key"
           :toolbars="field.toolbars"
+          :optionLabel="field.optionLabel"
           ></component>
         <div class="hr"></div>
       </div>
@@ -22,12 +23,14 @@
 import InputText from 'components/input/Text'
 import InputTextarea from 'components/input/Textarea';
 import InputTeam from 'components/input/Team'
+import InputSelect from 'components/input/Select'
 export default {
   name: "InputFieldset",
   components: {
     InputText,
     InputTextarea,
-    InputTeam
+    InputTeam,
+    InputSelect
   },
   props: {
     modelValue: {

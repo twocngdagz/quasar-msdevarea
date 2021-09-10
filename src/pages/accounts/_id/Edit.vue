@@ -43,14 +43,8 @@ export default {
                   key: 'team_id',
                   label: 'Team',
                   type: 'InputTeam',
-                  options: [
-                    { name: 'Florence Krajcik', key: 1 },
-                    { name: 'Sigurd Ankunding', key: 2 },
-                    { name: 'Miss Berniece Haley Jr.', key: 3 },
-                    { name: 'Prof. Jerrell Durgan Sr.', key: 4, $isDisabled: true },
-                    { name: 'Johnpaul Heaney DDS', key: 5 }
-                  ],
-                  rules: {}
+                  rules: {},
+                  optionLabel:"name"
                 }
               ]
             }

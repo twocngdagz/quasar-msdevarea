@@ -7,7 +7,7 @@
       :placeholder="placeholder"
       :label="label"
       :options="options"
-      option-label="name"
+      :option-label="optionLabel"
     >
       <template v-slot:selected>
         <div v-if="localValue.length > 0">
@@ -26,7 +26,7 @@ export default {
   props: {
     field: {required: true, type: String},
     label: {type: String},
-    rules: {required: false},
+    optionLabel: {required: true, type: String},
     placeholder: {required: false, type: String},
     modelValue: {type: Number}
   },

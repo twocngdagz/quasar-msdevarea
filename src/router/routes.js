@@ -8,10 +8,12 @@ const routes = [
       { path: 'accounts', component: () => import('pages/accounts/Index.vue') },
       { path: 'accounts/:id', component: () => import('pages/accounts/_id/Index.vue') },
       { path: 'accounts/:id/edit', component: () => import('pages/accounts/_id/Edit.vue') },
+      { path: 'accounts/add', component: () => import('pages/accounts/Add.vue') },
       { path: 'addresses', component: () => import('pages/addresses/Index.vue') },
       { path: 'addresses/:id', component: () => import('pages/addresses/_id/Index.vue') },
       { path: 'addresses/:id/edit', component: () => import('pages/addresses/_id/Edit.vue') },
       { path: 'addresses/add', component: () => import('pages/addresses/Add.vue') },
+      { path: 'settings/:module', component: () => import('pages/settings/_Module.vue') },
     ]
   },
   // Always leave this as last one,

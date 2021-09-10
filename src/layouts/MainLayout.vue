@@ -96,6 +96,7 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -105,7 +106,10 @@ export default defineComponent({
   },
 
   setup () {
+    const $store = useStore()
     const leftDrawerOpen = ref(false)
+
+    $store.dispatch("setting/fetch")
 
     return {
       essentialLinks: linksList,
@@ -114,6 +118,6 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  }
+  },
 })
 </script>
