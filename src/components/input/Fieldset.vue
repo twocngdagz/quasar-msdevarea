@@ -2,7 +2,7 @@
   <div>
     <fieldset>
       <legend v-if="title">{{ title }}</legend>
-      <div v-for="field in fields" :key="field.key">
+      <div v-for="field in fields" :key="field.key">`
         <component
           :is="field.type"
           v-model="localValue[field.key]"

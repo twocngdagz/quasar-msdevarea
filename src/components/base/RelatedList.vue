@@ -44,7 +44,7 @@
             v-if="showEdit && id"
             @success="editSuccess(fetch)"
           >
-            <q-form @submit.stop.prevent="handleSubmit(onSubmit)">
+            <q-form @submit.stop.prevent="onSubmit">
               <InputFieldset
                 :fields="updateFields"
                 v-model="form">
@@ -113,7 +113,9 @@ export default {
       },
       showView: false,
       showEdit: false,
-      showAdd: false
+      showAdd: false,
+      updateForm: {},
+      createForm: {}
     }
   },
   computed: {

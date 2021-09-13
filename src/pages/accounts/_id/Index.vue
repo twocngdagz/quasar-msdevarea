@@ -4,6 +4,41 @@
       <OutputGrid :item="item" :grids="grids"></OutputGrid>
       <OutputFieldset :item="item" :fields="fields" title="Kunde"></OutputFieldset>
 
+      <BaseRelatedList
+        :tableFields="[
+            {key: 'show', label: ''},
+            {key: 'street', label: 'Straße', sortable: true},
+            {key: 'postal_code', label: 'Postleitzahl', sortable: true},
+            {key: 'city', label: 'Ort', sortable: true},
+            {key: 'country', label: 'Land', sortable: true},
+            {key: 'action', label: 'Action'}
+            ]"
+        :showFields="[
+          { key: 'address_addition',label: 'Adresszusatz'},
+          { key: 'street', label: 'Straße'},
+          { key: 'house_number', label: 'Hausnummer'},
+          { key: 'postal_code', label: 'Postleitzahl'},
+          { key: 'city', label: 'Ort'},
+          { key: 'country', label: 'Land'}]"
+        :addFields="[
+          { key: 'address_addition', label: 'Adresszusatz', type: 'InputText'},
+          { key: 'street', label: 'Straße', type: 'InputText'},
+          { key: 'house_number', label: 'Hausnummer', type: 'InputText'},
+          { key: 'postal_code', label: 'Postleitzahl', type: 'InputText'},
+          { key: 'city', label: 'Ort', type: 'InputText', },
+          { key: 'country', label: 'Land', type: 'InputText'}]"
+        :updateFields="[
+          { key: 'address_addition', label: 'Adresszusatz', type: 'InputText', rules: {required: true}},
+          { key: 'street', label: 'Straße', type: 'InputText'},
+          { key: 'house_number', label: 'Hausnummer', type: 'InputText'},
+          { key: 'postal_code', label: 'Postleitzahl', type: 'InputText'},
+          { key: 'city', label: 'Ort', type: 'InputText', },
+          { key: 'country', label: 'Land', type: 'InputText'}
+        ]"
+        api-endpoint="addresses"
+        related-key="account_id"
+        :related-value="Number.parseInt($route.params.id)"
+      ></BaseRelatedList>
     </BaseShow>
   </div>
 </template>
@@ -13,12 +48,14 @@
 import BaseShow from 'components/base/Show'
 import OutputGrid from 'components/output/Grid'
 import OutputFieldset from 'components/output/Fieldset'
+import BaseRelatedList from 'components/base/RelatedList'
 export default {
   name: "index.vue",
   components: {
     BaseShow,
     OutputGrid,
-    OutputFieldset
+    OutputFieldset,
+    BaseRelatedList
   },
   data() {
     return {
